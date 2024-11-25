@@ -1,0 +1,466 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    z-index: 1000;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển đổi */
+}
+
+header.highlight {
+  background-color: rgba(255, 255, 255, 0.9); /* Nền trắng mờ */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   /* Thêm bóng đổ */
+  color: #000;                               /* Đổi màu chữ */
+}
+
+header a {
+  color: inherit; /* Thay đổi màu chữ của liên kết dựa trên header */
+  transition: color 0.3s ease; /* Hiệu ứng đổi màu mượt mà */
+}
+
+header.highlight a {
+  color: #333; /* Màu tối hơn cho các liên kết khi header nổi bật */
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin: 0px auto;
+    max-width: 900px;
+}
+
+.inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+ul#main-menu {
+    display: flex;
+}
+
+ul#main-menu a {
+    display: block;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #222;
+    font-size: 1.2rem;
+    position: relative;
+
+}
+
+ul#main-menu a::after{
+    content: "";
+    height: 4px;
+    width: 0;
+    background: #222;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+ul#main-menu a:hover::after{
+    width: 50%;
+    transform: translateX(70%);
+    
+}
+
+ul#main-menu a.no-underline::after {
+    content: none;
+}
+
+ul#main-menu a.no-underline:hover::after {
+    width: 0; 
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+    display: block; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 200px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 10px;
+    text-align: center; 
+  }
+  
+  .dropdown-menu li {
+    padding: 5px 20px;
+  }
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+padding: 10px 10px;
+}
+
+body {
+background-image: url(vbhi8765rdcvbnji8765-fotor-2024111423124.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+margin: 0;
+font-family: Arial, sans-serif;
+color: white;
+} 
+
+.content-wrapper1 {
+  display: flex;
+  flex-direction: column; /* Căn theo cột: hình ảnh phía trên, văn bản phía dưới */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Bố cục dòng hình ảnh */
+.images {
+  display: flex; /* Sắp xếp hình ảnh theo hàng ngang */
+  justify-content: center; /* Căn giữa dòng hình ảnh */
+  align-items: center; /* Căn giữa chiều dọc */
+  gap: 20px; /* Khoảng cách giữa các hình ảnh */
+  margin-bottom: 20px; /* Khoảng cách giữa dòng hình ảnh và phần văn bản */
+}
+
+/* Các hình ảnh con */
+.anh-trai, .anh-giua, .anh-phai {
+  max-width: 100%; /* Đảm bảo hình ảnh không chiếm quá nhiều không gian */
+  height: auto; /* Giữ tỷ lệ hình ảnh */
+  border-radius: 10px; /* Bo góc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ */
+}
+
+/* Phần văn bản */
+.text-content1 {
+  background: rgba(255, 255, 255, 0.6); /* Nền mờ */
+  backdrop-filter: blur(10px); /* Làm mờ nền phía sau */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Viền sáng */
+  padding: 20px;
+  border-radius: 15px;
+  color: #333; /* Màu chữ tối */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bóng đổ tinh tế */
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Đảm bảo tính tương thích trên thiết bị nhỏ */
+@media (max-width: 768px) {
+  .images {
+      flex-direction: column; /* Chuyển sang bố cục dọc trên thiết bị nhỏ */
+      gap: 10px; /* Giảm khoảng cách */
+  }
+  .anh-trai, .anh-giua, .anh-phai {
+      max-width: 80%; /* Hình ảnh chiếm nhiều không gian hơn */
+  }
+}
+  
+  .text-content1 h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #222; /* Màu chữ tối hơn cho tiêu đề */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Hiệu ứng sáng nhẹ */
+  }
+  
+  .text-content1 p {
+    font-size: 1.2rem;
+    color: #333; /* Màu chữ tối (xám đậm) */
+  }
+  
+  /* Áp dụng hiệu ứng cho nội dung */
+  .content-wrapper1,
+  .text-content1,
+  .anh-trai,
+  .anh-giua,
+  .anh-phai,
+  .extra-content.left,
+  .extra-content.right,
+  .content-section{
+    opacity: 0; /* Ẩn ban đầu */
+    animation: fadeIn 1s ease-out forwards; /* Hiệu ứng xuất hiện */
+  }
+  
+  /* Tùy chọn: Làm hiệu ứng xuất hiện lần lượt */
+  .content-wrapper1 {
+    animation-delay: 0.2s; /* Xuất hiện đầu tiên */
+  }
+  .anh-trai {
+    animation-delay: 0.4s; /* Xuất hiện tiếp theo */
+  }
+  .anh-giua {
+    animation-delay: 0.6s; /* Xuất hiện tiếp theo */
+  }
+  .anh-phai {
+    animation-delay: 0.8s; /* Xuất hiện tiếp theo */
+  }
+  .text-content1 {
+    animation-delay: 1s; /* Xuất hiện cuối cùng */
+  }
+  .extra-content.left {
+    animation-delay: 1.2s;
+  }
+  .extra-content.right {
+    animation-delay: 1.4s;
+  }
+
+  .content1 {
+    display: flex;
+    flex-direction: column; /* Căn chỉnh theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    height: 90vh; /* Chiếm toàn bộ chiều cao của cửa sổ */
+    padding: 20px;
+  }
+
+  .extra-content {
+  position: absolute; /* Để định vị ở các cạnh */
+  top: 50%; /* Căn giữa theo chiều dọc */
+  transform: translateY(-50%); /* Điều chỉnh vị trí chính xác */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Khoảng cách giữa các phần tử văn bản */
+}
+
+.extra-content.left {
+  left: 2%; /* Vị trí bên trái */
+  text-align: left;
+}
+
+.extra-content.right {
+  right: 2%; /* Vị trí bên phải */
+  text-align: right;
+}
+
+.extra-content .left-text,
+.extra-content .right-text {
+  background: rgba(255, 255, 255, 0.8); /* Nền mờ */
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #222; /* Màu chữ tối */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bóng đổ */
+  font-size: x-large;
+  font-weight: bold;
+}
+
+/* Đảm bảo tính tương thích trên thiết bị nhỏ */
+@media (max-width: 768px) {
+  .extra-content {
+    position: relative; /* Đưa về vị trí bình thường */
+    transform: none;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .extra-content.left {
+    order: -1; /* Hiển thị bên trái trước trên thiết bị nhỏ */
+  }
+
+  .extra-content .left-text,
+  .extra-content .right-text {
+    font-size: 0.9rem;
+  }
+
+  .extra-content .extra-image {
+  width: 80%; /* Điều chỉnh kích thước hình ảnh theo ý muốn */
+  max-width: 200px; /* Giới hạn kích thước tối đa */
+  margin: 0 auto 10px; /* Căn giữa hình ảnh và thêm khoảng cách dưới */
+  display: block; /* Hiển thị dưới dạng khối */
+  border-radius: 10px; /* Bo góc hình ảnh */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bóng đổ */
+}
+
+/* Điều chỉnh trên thiết bị nhỏ */
+@media (max-width: 768px) {
+  .extra-content .extra-image {
+    width: 50%; /* Giảm kích thước hình ảnh trên thiết bị nhỏ */
+  }
+}
+  
+}
+  
+  .content-wrapper2 {
+    display: flex;
+    align-items: center; /* Căn giữa theo trục dọc */
+    justify-content: center; /* Căn giữa theo trục ngang */
+    gap: 20px; /* Khoảng cách giữa ảnh và văn bản */
+    padding: 20px;
+    text-align: left; /* Văn bản căn lề trái */
+    height: 100vh; /* Chiếm toàn bộ chiều cao của cửa sổ */
+}
+
+.anh2 {
+    flex: 1; /* Ảnh chiếm một phần không gian */
+    max-width: 20%; /* Ảnh tối đa chiếm 50% chiều rộng */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-content2 {
+    flex: 1; /* Văn bản chiếm một phần không gian */
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 50%; /* Văn bản tối đa chiếm 50% chiều rộng */
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper2 {
+        flex-direction: column; /* Thay đổi bố cục thành dọc trên màn hình nhỏ */
+    }
+    .anh2, .text-content2 {
+        max-width: 100%; /* Chiếm toàn bộ chiều rộng */
+    }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Xuất hiện từ dưới lên */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Trạng thái ban đầu */
+  }
+}
+
+/* Áp dụng hiệu ứng cho nội dung */
+.content-wrapper2,
+.text-content2,
+.anh2 {
+  opacity: 0; /* Ẩn ban đầu */
+  animation: fadeIn 1s ease-out forwards; /* Hiệu ứng xuất hiện */
+}
+
+/* Tùy chọn: Làm hiệu ứng xuất hiện lần lượt */
+.content-wrapper2 {
+  animation-delay: 0.2s; /* Xuất hiện đầu tiên */
+}
+.anh2 {
+  animation-delay: 0.4s; /* Xuất hiện tiếp theo */
+}
+.text-content2 {
+  animation-delay: 0.6s; /* Xuất hiện cuối cùng */
+}
+
+.content-section {
+  margin: 100px auto;          /* Tạo khoảng cách trên và dưới */
+  padding: 20px;              /* Tạo khoảng cách trong phần tử */
+  max-width: 800px;           /* Giới hạn độ rộng của phần chứa văn bản */
+  background-color: rgb(78, 78, 78); /* Màu nền nhẹ để nổi bật văn bản */
+  border-radius: 10px;        /* Bo góc phần tử */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+}
+
+.content-section h1 {
+  text-align: center;         /* Căn giữa tiêu đề */
+  font-size: 2rem;
+  margin-bottom: 20px;        /* Khoảng cách dưới tiêu đề */
+  color: rgb(255, 255, 255);
+}
+
+.content-section p {
+  font-size: 1.1rem;          /* Đặt kích thước chữ cho đoạn văn */
+  line-height: 1.6;           /* Tăng khoảng cách dòng cho dễ đọc */
+  text-align: justify;        /* Căn đều hai bên cho đoạn văn */
+  color: rgb(255, 255, 255);                /* Màu chữ tối cho dễ nhìn */
+}
+
+.center-img {
+  display: block;          /* Đưa ảnh ra một dòng riêng */
+  margin: 20px auto;       /* Căn giữa theo chiều ngang */
+  max-width: 100%;         /* Giới hạn ảnh không vượt quá chiều rộng container */
+  height: auto;            /* Đảm bảo tỷ lệ ảnh đúng */
+  border-radius: 10px;     /* Bo góc nhẹ ảnh */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho ảnh */
+}
+
+.center-img {
+  display: block;          /* Đưa ảnh ra một dòng riêng */
+  margin: 20px auto;       /* Căn giữa theo chiều ngang */
+}
+iframe {
+  display: block;              /* Đưa iframe ra một dòng riêng */
+  margin: 20px auto;           /* Căn giữa iframe theo chiều ngang */
+  max-width: 100%;              /* Đảm bảo iframe không vượt quá chiều rộng container */
+  height: auto;                /* Đảm bảo tỷ lệ iframe giữ nguyên */
+  border-radius: 10px;         /* Bo góc nhẹ cho iframe */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho iframe */
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;                /* Đảm bảo container chiếm toàn bộ chiều rộng */
+  padding-bottom: 56.25%;      /* Giữ tỷ lệ 16:9 (9/16 = 0.5625 = 56.25%) */
+  height: 0;                  /* Chiều cao phụ thuộc vào padding-bottom */
+  overflow: hidden;           /* Ẩn các phần thừa nếu có */
+  max-width: 100%;            /* Đảm bảo không vượt quá chiều rộng của container */
+  background: #000;           /* Màu nền đen cho iframe */
+}
+
+/* iframe được căn chỉnh bên trong container */
+.iframe-container iframe {
+  position: absolute;         /* Đặt iframe tuyệt đối trong container */
+  top: 0;
+  left: 0;
+  width: 100%;                 /* Đảm bảo iframe chiếm toàn bộ chiều rộng của container */
+  height: 100%;                /* Đảm bảo iframe có chiều cao đúng theo tỷ lệ */
+  border: none;                /* Loại bỏ viền */
+}
